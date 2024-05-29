@@ -75,7 +75,7 @@ clock.ontick = (evt) => {
 if (HeartRateSensor && appbit.permissions.granted("access_heart_rate")) {
   const hrm = new HeartRateSensor({ frequency: 1 });
   hrm.addEventListener("reading", () => {
-    heartRate.text = hrm.heartRate;
+    heartRate.text = `\u2665${hrm.heartRate}`;
   });
   hrm.start();
 }
