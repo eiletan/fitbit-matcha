@@ -15,18 +15,54 @@ clock.granularity = "minutes";
 // Get a handle on the <text> element
 const myLabel = document.getElementById("myLabel");
 
+// Get a handle for the <image> element which is used as the background image
+const bg = document.getElementById("background-img");
+
+// Time ranges for images
+let morning = [6, 11];
+let afternoon = [12, 17];
+let evening = [18, 21];
+let night= [22, 5];
+
+// Images
+let shibuya ="shibuya-crossing.jpg";
+let fuji = "mt-fuji.jpg";
+let ninenzaka ="ninenzaka.jpg";
+let shinkansen = "bullet-train-mt-fuji.jpg";
+
+function dynamicImageSwitch(hour) {
+  if ((hour >= morning[0] && hour <= morning[1])) {
+    if (bg.href != ninenzaka) {
+      bg.href = ninenzaka;
+    }
+  } else if ((hour >= afternoon[0] && hour <= afternoon[1])) {
+    if (bg.href != shinkansen) {
+      bg.href = shinkansen;
+    }
+  } else if ((hour >= evening[0] && hour <= evening[1])) {
+    if (bg.href != shibuya) {
+      bg.href = shibuya;
+    }
+  } else if ((hour >= night[0] || hour <= night[1])) {
+    if (bg.href != night) {
+      bg.href = fuji;
+    }
+  }
+}
+
 // Update the <text> element every tick with the current time
 clock.ontick = (evt) => {
   let today = evt.date;
   let hours = today.getHours();
-  hours = hours % 12 || 12;
-  // if (preferences.clockDisplay === "12h") {
-  //   // 12h format
-  //   hours = hours % 12 || 12;
-  // } else {
-  //   // 24h format
-  //   hours = zeroPad(hours);
-  // }
+  let hours24 = zeroPad(hours);
+  if (preferences.clockDisplay === "12h") {
+    // 12h format
+    hours = hours % 12 || 12;
+  } else {
+    // 24h format
+    hours = zeroPad(hours);
+  }
   let mins = zeroPad(today.getMinutes());
+  dynamicImageSwitch(hours24);
   myLabel.text = `${hours}:${mins}`;
 }

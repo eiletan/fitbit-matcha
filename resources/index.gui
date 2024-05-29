@@ -1,3 +1,4 @@
 <svg class="background">
+  <image id="background-img" href="shibuya-crossing.jpg"/>
   <text id="myLabel" />
 </svg>
