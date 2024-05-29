@@ -1,6 +1,8 @@
 import clock from "clock";
 import * as document from "document";
 import { preferences } from "user-settings";
+import { me as appbit } from "appbit";
+import { HeartRateSensor } from "heart-rate";
 
 function zeroPad(i) {
   if (i < 10) {
@@ -17,6 +19,9 @@ const myLabel = document.getElementById("myLabel");
 
 // Get a handle for the <image> element which is used as the background image
 const bg = document.getElementById("background-img");
+
+// Get a handle for the <text> element which is used to display heart rate
+const heartRate = document.getElementById("heartRate");
 
 // Time ranges for images
 let morning = [6, 11];
@@ -65,4 +70,12 @@ clock.ontick = (evt) => {
   let mins = zeroPad(today.getMinutes());
   dynamicImageSwitch(hours24);
   myLabel.text = `${hours}:${mins}`;
+}
+
+if (HeartRateSensor && appbit.permissions.granted("access_heart_rate")) {
+  const hrm = new HeartRateSensor({ frequency: 1 });
+  hrm.addEventListener("reading", () => {
+    heartRate.text = hrm.heartRate;
+  });
+  hrm.start();
 }
