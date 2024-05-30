@@ -58,6 +58,7 @@ let batteryFull = "battery-full.png";
 let battery75 = "battery-seventyfive.png";
 let batteryHalf = "battery-half.png";
 let battery25 = "battery-twentyfive.png";
+let batteryEmpty = "battery-empty.png";
 
 // Days array
 let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
@@ -85,14 +86,16 @@ function dynamicImageSwitch(hour) {
 }
 
 function dynamicBatteryImg () {
-  if (battery.chargeLevel > 75) {
+  if (battery.chargeLevel > 88){ 
     batteryIcon.href = batteryFull;
-  } else if (battery.chargeLevel > 50) {
+  } else if (battery.chargeLevel > 62) {
     batteryIcon.href = battery75;
-  } else if (battery.chargeLevel > 25) {
+  } else if (battery.chargeLevel > 37) {
     batteryIcon.href = batteryHalf;
-  } else {
+  } else if (battery.chargeLevel > 12) {
     batteryIcon.href = battery25;
+  } else {
+    batteryIcon.href = batteryEmpty;
   }
 }
 
