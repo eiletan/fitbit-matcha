@@ -16,7 +16,46 @@
   font-size: 30;
   font-family: System-Bold;
   text-length: 32;
-  x:0%+10;
+  x:100%-60;
   y:100%-10;
   fill: white;
 }
+
+#stepCount {
+  font-size: 30;
+  font-family: System-Bold;
+  text-length: 32;
+  x:30;
+  y:30;
+  fill: white;
+}
+
+#batteryPercent {
+  font-size: 30;
+  font-family: System-Bold;
+  text-length: 32;
+  x:100%-60;
+  y:30;
+  fill: white;
+}
+
+#calories {
+  font-size: 30;
+  font-family: System-Bold;
+  text-length: 32;
+  x:30;
+  y:100%-10;
+  fill: white;
+}
+
+#date{
+  font-size: 20;
+  font-family: System-Bold;
+  text-length: 64;
+  text-anchor: middle;
+  display-align: center;
+  x:50%;
+  y:50%+40;
+  fill: white;
+} 
+
