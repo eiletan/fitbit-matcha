@@ -3,12 +3,12 @@
 }
 
 #myLabel {
-  font-size: 60;
+  font-size: 80;
   font-family: System-Bold;
   text-length: 32;
   text-anchor: middle;
   x: 50%;
-  y: 50%+20;
+  y: 50%+10;
   fill: white;
 }
 
@@ -49,13 +49,13 @@
 }
 
 #date{
-  font-size: 20;
+  font-size: 30;
   font-family: System-Bold;
   text-length: 64;
   text-anchor: middle;
   display-align: center;
   x:50%;
-  y:50%+40;
+  y:50%+50;
   fill: white;
 } 
 

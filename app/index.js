@@ -50,10 +50,10 @@ let evening = [18, 21];
 let night= [22, 5];
 
 // Images
-let shibuya ="shibuya-crossing.jpg";
-let fuji = "mt-fuji.jpg";
-let ninenzaka ="ninenzaka.jpg";
-let shinkansen = "bullet-train-mt-fuji.jpg";
+let shibuya ="shibuya-crossing.png";
+let fuji = "mt-fuji.png";
+let ninenzaka ="ninenzaka.png";
+let shinkansen = "bullet-train-mt-fuji.png";
 let batteryFull = "battery-full.png";
 let battery75 = "battery-seventyfive.png";
 let batteryHalf = "battery-half.png";
@@ -105,6 +105,10 @@ function updateStepsAndCalories() {
     calories.text = today.adjusted.calories;
   }
 }
+
+// Init battery level display
+batteryLevel.text = battery.chargeLevel + "%";
+
 
 // Update the <text> element every tick with the current time
 clock.ontick = (evt) => {
