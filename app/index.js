@@ -18,9 +18,11 @@ clock.granularity = "minutes";
 
 // Get a handle on the <text> element
 const myLabel = document.getElementById("myLabel");
+const myLabelOutline = document.getElementById("myLabelOutline");
 
 // Get a handle on the <text> element which is used to display date
 const theDate = document.getElementById("date");
+const theDateOutline = document.getElementById("dateOutline");
 
 // Get a handle for the <image> element which is used as the background image
 const bg = document.getElementById("backgroundImg");
@@ -30,15 +32,19 @@ const batteryIcon = document.getElementById("batteryImg");
 
 // Get a handle for the <text> element which is used to display heart rate
 const heartRate = document.getElementById("heartRate");
+const heartRateOutline = document.getElementById("heartRateOutline");
 
 // Get a handle for the <text> element which is used to display step count
 const stepCount = document.getElementById("stepCount");
+const stepCountOutline = document.getElementById("stepCountOutline");
 
 // Get a handle for the <text> element which is used to display step count
 const calories = document.getElementById("calories");
+const caloriesOutline = document.getElementById("caloriesOutline");
 
 // Get a handle for the <text> element which is used to display battery level
 const batteryLevel = document.getElementById("batteryPercent");
+const batteryLevelOutline = document.getElementById("batteryPercentOutline");
 
 
 
@@ -103,6 +109,8 @@ function updateStepsAndCalories() {
   if (appbit.permissions.granted("access_activity")) {
     stepCount.text = today.adjusted.steps;
     calories.text = today.adjusted.calories;
+    stepCountOutline.text = today.adjusted.steps;
+    caloriesOutline.text = today.adjusted.calories;
   }
 }
 
@@ -125,7 +133,9 @@ clock.ontick = (evt) => {
   let mins = zeroPad(today.getMinutes());
   dynamicImageSwitch(hours24);
   myLabel.text = `${hours}:${mins}`;
+  myLabelOutline.text = myLabel.text;
   theDate.text = `${days[today.getDay()]}, ${months[today.getMonth()]} ${today.getDate()}`;
+  theDateOutline.text = theDate.text;
   updateStepsAndCalories();
 }
 
@@ -133,6 +143,7 @@ if (HeartRateSensor && appbit.permissions.granted("access_heart_rate")) {
   const hrm = new HeartRateSensor({ frequency: 1 });
   hrm.addEventListener("reading", () => {
     heartRate.text = `${hrm.heartRate}`;
+    heartRateOutline.text = `${hrm.heartRate}`;
   });
   hrm.start();
 }
@@ -145,6 +156,7 @@ battery.onchange = (charger, evt) => {
   } else {
     batteryLevel.text = battery.chargeLevel + "%";
   }
+  batteryLevelOutline.text = batteryLevel.text;
   
   dynamicBatteryImg();
 }

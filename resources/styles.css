@@ -12,6 +12,16 @@
   fill: white;
 }
 
+#myLabelOutline {
+  font-size: 80;
+  font-family: System-Bold;
+  text-length: 32;
+  text-anchor: middle;
+  x: 50%+3;
+  y: 50%+10;
+  fill: black;
+}
+
 #heartRate {
   font-size: 30;
   font-family: System-Bold;
@@ -19,6 +29,15 @@
   x:100%-60;
   y:100%-10;
   fill: white;
+}
+
+#heartRateOutline {
+  font-size: 30;
+  font-family: System-Bold;
+  text-length: 32;
+  x:100%-57;
+  y:100%-10;
+  fill: black;
 }
 
 #stepCount {
@@ -30,6 +49,15 @@
   fill: white;
 }
 
+#stepCountOutline {
+  font-size: 30;
+  font-family: System-Bold;
+  text-length: 32;
+  x:33;
+  y:30;
+  fill: black;
+}
+
 #batteryPercent {
   font-size: 30;
   font-family: System-Bold;
@@ -37,6 +65,15 @@
   x:100%-60;
   y:30;
   fill: white;
+}
+
+#batteryPercentOutline {
+  font-size: 30;
+  font-family: System-Bold;
+  text-length: 32;
+  x:100%-57;
+  y:30;
+  fill: black;
 }
 
 #calories {
@@ -48,6 +85,16 @@
   fill: white;
 }
 
+
+#caloriesOutline {
+  font-size: 30;
+  font-family: System-Bold;
+  text-length: 32;
+  x:33;
+  y:100%-10;
+  fill: black;
+}
+
 #date{
   font-size: 30;
   font-family: System-Bold;
@@ -57,5 +104,16 @@
   x:50%;
   y:50%+50;
   fill: white;
+}
+
+#dateOutline {
+  font-size: 30;
+  font-family: System-Bold;
+  text-length: 64;
+  text-anchor: middle;
+  display-align: center;
+  x:50%+3;
+  y:50%+50;
+  fill: black;
 } 
 
