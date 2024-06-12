@@ -114,8 +114,10 @@ function updateStepsAndCalories() {
   }
 }
 
-// Init battery level display
+// Init battery level display and heart rate display
 batteryLevel.text = battery.chargeLevel + "%";
+heartRate.text = "---";
+heartRateOutline.text = heartRate.text;
 
 
 // Update the <text> element every tick with the current time

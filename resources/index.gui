@@ -1,6 +1,6 @@
 <svg class="background">
   <image id="backgroundImg" href="ninenzaka.png" height="100%" width="100%"/>
-  <image id="heartRateImg" href="heart.png" width="30" height="30" x="100%-90" y="100%-35"/>
+  <image id="heartRateImg" href="heart.png" width="30" height="30" x="100%-84" y="100%-35"/>
   <image id="stepCountImg" href="shoe.png" width="30" height="30" x="0" y="5"/>
   <image id="batteryImg" href="battery-full.png" width="30" height="30" x="100%-90" y="5"/>
   <image id="calorieImg" href="fire.png" width="30" height="30" x="0" y="100%-35"/>
